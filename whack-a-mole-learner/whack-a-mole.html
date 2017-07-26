@@ -243,25 +243,29 @@ h1 {
     var score =  parseInt(document.querySelector(".score").value);
     
     var highScore;
+    highScore = (typeof(highScore)!='undifined')? 0 : localStorage.highScore;
     
-
-     
+    localStorage.setItem("highScore",highScore);
+    
+    
     
     function showingScore(){
-        var tempy = 0;
-
         
-        if(localStorage.highScore == tempy){
-        localStorage.setItem("highScore", tempy);
-        highScore = localStorage.highScore;
-    
-    }
-        if(score > highScore){
-            localStorage.highScore = score;
-           
-        }
-         highScore = localStorage.highScore;
+        
 
+            if(highScore < score){
+            highScore = score;
+            localStorage.highScore = highScore;
+                compScoring();
+            }else{
+                compScoring();
+            }
+        
+    }
+    
+    function compScoring(){
+        
+        
         showHighScore.innerHTML = highScore;
         showLowScore.innerHTML= score;
     }
