@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<title> Interest Calculator</title>
+</head>
+<body>
+<h1>Calculae the difference</h1>
+<h2>Calculate the difference </h2>
+<input id="input1" type=”number”/> + 
+<input id="input2" type=”number”/> + 
+<input id="input3" type=”number”/>
+
+<input type="button" id="answer2" value="Answer2" />
+
+<div id="result"></div>
+<div id="resultg"></div>
+<div id="resulth"></div>
+<div id="resultj"></div>
+
+
+<script>
+    
+         
+     var btn1 = document.querySelector('#answer2');
+    
+    btn1.addEventListener("click", addNum, false);
+    
+    function addNum(){
+         var result = document.querySelector('#result');
+         var resulth = document.querySelector('#reslutg');
+         var resulth = document.querySelector('#resulth');
+         var resultj = document.querySelector('#resultj');
+         
+         var in1 = parseInt(document.querySelector('#input1').value);
+         var in2 = parseInt(document.querySelector('#input2').value);
+         var in3 = parseInt(document.querySelector('#input3').value);
+        
+        
+        
+        var sum1 = (in1 + in2) * in3;
+        
+        var sum2 = in1 + in2 + in3;
+        
+        
+        result.innerHTML = " the sum of equation ("+ in1 + " + " + in2 + ") * "  + in3+ " is = " + sum1;
+        resultg.innerHTML = " the sum of equation "+ in1 + " + " + in2 + " + "  + in3+ " is = " + sum2;
+        resulth.innerHTML = " the sum of the differnce is "
+        resulth.innerHTML +=  sum1 - sum2;
+        
+        
+        
+        
+            
+             
+        }
+        
+        
+      
+		
+
+</script>
+
+
+
+</body>
+</html>

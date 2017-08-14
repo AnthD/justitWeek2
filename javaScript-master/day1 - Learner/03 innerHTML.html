@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<form>
+<input type="text" id="input1"/>
+</form>
+<div><button id="button1">Button</button></div>
+<div id="demo"></div>
+
+<script>
+    
+    
+     var btn1 = document.querySelector('#button1');
+    
+    btn1.addEventListener("click", collectionfunc);
+    
+    function collectionfunc(){
+         var dem = document.querySelector('#demo');
+         var in1 = document.querySelector('#input1');
+        dem.innerHTML= in1.value;
+        
+    }
+    
+     
+</script>
+</body>
+</html>

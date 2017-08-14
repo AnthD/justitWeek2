@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<p>Please enter 2 numbers below</p>
+<form>
+<input type="number" id="input1"/>
+<input type="number" id="input2"/>
+</form>
+<div><button id="button1">Compare !</button></div>
+<div id="demo"></div>
+
+
+<script>
+    
+         
+     var btn1 = document.querySelector('#button1');
+    
+    btn1.addEventListener("click", addNum, false);
+    
+    function addNum(){
+         var dem = document.querySelector('#demo');
+         var in1 = parseInt(document.querySelector('#input1').value);
+         var in2 = parseInt(document.querySelector('#input2').value);
+        
+        if(in1 == in2){
+            
+            dem.innerHTML= "these are different numbers ";
+        }else{
+            
+             dem.innerHTML= " these number are not equal";
+        }
+        
+        
+    }
+      
+      
+</script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<p>Conditional Test</p>
+<form>
+Amount to Borrow: <input type="number" id="input1"/>
+interest rate: <input type="number" id="input2"/>
+length of time of loan in months: <input type="number" id="input3"/>
+
+
+</form>
+<div><button id="button1">Test !</button></div>
+    <div><button id="button2">Restart</button></div>
+<div id="demo"></div>
+    
+<script>
+   
+     var guessCount =0;
+         
+     var btn1 = document.querySelector('#button1');
+    var resetBtn = document.querySelector('#button2'); 
+    //var number = Math.floor(Math.random() * 10);
+   // console.log(number);
+    
+      resetBtn.disabled= true;
+    
+    
+    btn1.addEventListener("click", loanCalc, false);
+    
+
+    function loanCalc(){
+        
+         resetBtn.disabled= false;
+        resetBtn.addEventListener("click", resetPage, false);
+        var dem = document.querySelector('#demo');
+         var in1 = parseFloat(document.querySelector('#input1').value);
+         var in2 = parseFloat(document.querySelector('#input2').value);
+         var in3 = parseInt(document.querySelector('#input3').value);
+        
+        var calcy = (in1*(1+(in2/12))**(in3*12));
+
+        var intRateCal = (in2/100)/12;
+        var interestPerMonth =  ((intRateCal+intRateCal/((1+intRateCal)**in3 -1))*in1);
+
+        console.log(interestPerMonth);
+        var totalInterestLoan = interestPerMonth * in3;
+        console.log(interestPerMonth);
+        
+        dem.innerHTML = "You interest permonth is = £" + interestPerMonth.toFixed(2) + " <br>";
+        dem.innerHTML += "The total interest you have to pay on £"+ in1 + "on fixed term length of " + in3
+                        + " months, an interest rate of " + in2 + " will be £"+ totalInterestLoan.toFixed(2);
+
+    }
+    
+     
+    
+    function resetPage(){
+
+         document.location.reload();
+
+    }
+        
+    
+       
+</script>
+
+</body>
+</html>

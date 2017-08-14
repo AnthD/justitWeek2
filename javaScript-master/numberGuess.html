@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<p>Conditional Test</p>
+<form>
+<input type="number" id="input1"/>
+
+
+</form>
+<div><button id="button1">Test !</button></div>
+    <div><button id="button2">Restart</button></div>
+<div id="demo"></div>
+
+<script>
+     
+     var guessCount =0;
+         
+     var btn1 = document.querySelector('#button1');
+    var resetBtn = document.querySelector('#button2');
+    var number = Math.floor(Math.random() * 10);
+    console.log(number);
+    
+    
+    btn1.addEventListener("click", numberGuess, false);
+    
+    resetBtn.disabled= true;
+
+    function numberGuess(e){
+        
+           e.preventDefault();
+           guessCount += 1 ;
+
+         console.log(guessCount);
+        
+         var dem = document.querySelector('#demo');
+         var in1 = parseInt(document.querySelector('#input1').value);
+        
+    
+       
+               if(in1 < number){
+                dem.innerHTML= " your guess was too low guess again";
+
+            }else if( in1 > number){
+                 dem.innerHTML= " your guess was too high guess again";
+            }else if(in1 == number){
+
+                 dem.innerHTML= "you guessed correctly that the number  is "+ number + ",";
+                
+                dem.innerHTML+= " it took you " + guessCount + "to guess correctly";
+                
+                resetBtn.disabled= false;
+
+            }else{
+                
+                dem.innerHTML= "please enter a number";
+            }
+
+    }
+    
+    resetBtn.addEventListener("click", resetPage, false);
+    
+    function resetPage(){
+
+         document.location.reload();
+
+    }
+    
+</script>
+
+</body>
+</html>

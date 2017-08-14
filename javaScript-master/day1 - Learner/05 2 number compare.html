@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<p>Please enter 2 numbers below</p>
+<form>
+<input type="number" id="input1"/>
+<input type="number" id="input2"/>
+</form>
+<div><button id="button1">Compare two numbers</button></div>
+<div id="demo"></div>
+
+
+<script>
+    var inOne = document.querySelector("#input1");
+    var inTwo = document.querySelector("#input2");
+    var dem = document.querySelector('#demo');
+    var fm = document.querySelector("form");
+    var btn = document.querySelector("#button1");
+    
+    btn.addEventListener("click", myFirst, false);
+    
+    function myFirst(){
+        var userInput = parseInt(document.getElementById("input1").value);
+        console.log(userInput);
+        
+         var userInput2 = parseInt(document.getElementById("input2").value);
+        console.log(userInput2);
+        
+          
+        if(userInput < userInput2){
+            
+            dem.innerHTML = userInput2;
+            
+            console.log('if statement one' + userInput2);
+            
+        } else if( userInput > userInput2 ){
+           dem.innerHTML = userInput;
+            
+            console.log('if statement 2');
+        }else{
+            dem.textContent="they are the same number";
+            console.log('if statement 3');
+        }
+        
+    }
+    
+//    btn.click(function(){
+//        
+//        if(inOne.value() < inTwo.value()){
+//            
+//        dem.document.write("<p>" + inTwo.value() + "</p>");
+//            
+//        console.log('if statement one' + inTwo.value());
+//        } else if( inOne > inTwo.value() ){
+//           dem.document.write("<p>" + inTwo.value() + "</p>");
+//            console.log('if statement 2');
+//        }else{
+//            dem.append("<p> they are the same number </p>");
+//            console.log('if statement 3');
+//        }
+//        
+//    });
+      
+</script>
+
+</body>
+</html>

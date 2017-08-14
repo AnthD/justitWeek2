@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<p>Conditional Test</p>
+<form>
+<input type="number" id="input1"/>
+
+
+</form>
+<div><button id="button1">Test !</button></div>
+<div id="demo"></div>
+
+<script>
+     
+         
+     var btn1 = document.querySelector('#button1');
+    
+    btn1.addEventListener("click", addNum, false);
+    
+    function addNum(){
+         var dem = document.querySelector('#demo');
+         var in1 = parseInt(document.querySelector('#input1').value);
+        
+        if(in1  < 10 || in1 > 10){
+            
+            dem.innerHTML= "the number you typed is: "+ in1;
+        }else{
+             dem.innerHTML= " this number cannot be displayed";
+        }
+        
+        
+    }
+    
+</script>
+
+</body>
+</html>

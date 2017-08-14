@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<p>Enter number below</p>
+<form>
+<input type="number" id="input1"/>
+
+</form>
+<div><button id="button1">Submit</button></div>
+<div id="output1"></div>
+<div id="output2"></div>
+
+<script>
+ 
+    var btn1 = document.querySelector('#button1');
+    
+    btn1.addEventListener("click", addNum, false);
+    
+    function addNum(){
+         var dem = document.querySelector('#demo');
+         var in1 = parseInt(document.querySelector('#input1').value);
+        var out1 = document.querySelector('#output1')
+        var out2 = document.querySelector('#output2')
+        
+        in1.size = 1;
+    
+        
+        
+            
+            out1.innerHTML= (in1 - 1 );
+            
+             out2.innerHTML= (1+in1);
+        }
+        
+      
+</script>
+
+</body>
+</html>
